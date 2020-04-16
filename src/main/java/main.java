@@ -29,7 +29,7 @@ public class main {
                 File sourceImage = new File(dirPath + "\\" + fileName);
                 BasicFileAttributes attr = Files.readAttributes(sourceImage.toPath(), BasicFileAttributes.class);
                 if (new Date(attr.lastModifiedTime().toMillis()).compareTo(startDate) >= 0 && new Date(attr.lastModifiedTime().toMillis()).compareTo(endDate) <= 0) {
-                    WebpIO.create().toNormalImage(dirPath + "\\" + fileName, dirPath + fileName);
+                    WebpIO.create().toNormalImage(dirPath + "\\" + fileName, dirPath + "\\" + fileName);
                 }
             }
         } catch (Exception e) {
